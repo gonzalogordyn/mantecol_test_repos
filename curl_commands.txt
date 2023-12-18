@@ -1,6 +1,6 @@
 CREAR PULL REQUEST: 
 
-curl --location '127.0.0.1:9418/repos/demo_remote/pulls' \
+curl -v --location '127.0.0.1:9418/repos/demo_remote/pulls' \
 -X POST \
 --header 'Content-Type: application/json' \
 --data '{"title":"Amazing new feature","body":"Please pull these awesome changes in!","head":"d8c8f09624630b79378d4cf87ef888d9ba50d6d3","base":"2c16d20f733849ec73a537d1f4be4c2370c99c1b",
@@ -10,15 +10,15 @@ curl --location '127.0.0.1:9418/repos/demo_remote/pulls' \
 -----------------------------------------------------------------------------------------------------------
 GETTEAR PULL REQUEST:
 
-curl -X GET http://localhost:9418/repos/demo_remote/pulls/1
+curl -v -X GET http://localhost:9418/repos/demo_remote/pulls/1
 -----------------------------------------------------------------------------------------------------------
 LISTAR COMMITS DEL PULL REQUEST:
 
-curl -X GET http://localhost:9418/repos/demo_remote/pulls/1/commits
+curl -v -X GET http://localhost:9418/repos/demo_remote/pulls/1/commits
 -----------------------------------------------------------------------------------------------------------
 MERGEAR PULL REQUEST:
 
-curl --location '127.0.0.1:9418/repos/demo_remote/pulls/1/merge' \
+curl -v --location '127.0.0.1:9418/repos/demo_remote/pulls/1/merge' \
   -X PUT \
   --header 'Content-Type: application/json' \
   -d '{"commit_title":"Merge PR","commit_message":"Merge mantecol"}'
